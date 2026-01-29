@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
         :root {
             --primary-blue: #0f172a;
@@ -17,7 +16,7 @@
             --white: #ffffff;
             --light-bg: #f8fafc;
             --text-dark: #1e293b;
-            --glass: rgba(255, 255, 255, 0.9);
+            --border-color: #e2e8f0;
         }
 
         * {
@@ -29,162 +28,213 @@
 
         body {
             background-color: var(--light-bg);
-            background-image:
-                radial-gradient(at 0% 0%, rgba(225, 29, 72, 0.05) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(15, 23, 42, 0.05) 0px, transparent 50%);
             color: var(--text-dark);
             min-height: 100vh;
+            padding-bottom: 50px;
         }
 
-        /* --- Header & Navigation --- */
         header {
             background: var(--primary-blue);
-            padding: 1.5rem 5%;
+            padding: 2.5rem 5%;
             color: white;
             text-align: center;
-            border-bottom: 4px solid var(--gold);
+            border-bottom: 5px solid var(--gold);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             letter-spacing: 1px;
             text-transform: uppercase;
+            margin-bottom: 8px;
         }
 
         header p {
             color: var(--gold);
             font-weight: 300;
-            margin-top: 5px;
+            font-size: 1.1rem;
         }
 
-        /* --- Main Content --- */
         .container {
-            max-width: 1200px;
-            margin: 3rem auto;
+            max-width: 1300px;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        .section-header {
+            margin: 40px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        /* --- Card Styles --- */
+        .section-header h2 {
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+        }
+
+        .section-header .line {
+            flex-grow: 1;
+            height: 2px;
+            background: var(--border-color);
+        }
+
+        /* --- Grid Overview --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
         .card {
             background: var(--white);
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
             transition: all 0.3s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .card-header {
-            padding: 20px;
-            background: linear-gradient(135deg, var(--primary-blue), #1e293b);
+            padding: 15px 20px;
+            background: var(--primary-blue);
             color: white;
-            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .card-header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--accent-red);
-        }
-
-        .indicator-tag {
-            background: var(--gold);
-            color: var(--primary-blue);
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            display: inline-block;
+        .card-header h3 {
+            font-size: 1rem;
+            font-weight: 600;
         }
 
         .card-body {
-            padding: 25px;
-            flex-grow: 1;
-        }
-
-        .info-group {
-            margin-bottom: 15px;
+            padding: 20px;
         }
 
         .label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #64748b;
             text-transform: uppercase;
             font-weight: 600;
             display: block;
+            margin-bottom: 2px;
         }
 
         .value {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
-            color: var(--text-dark);
+            margin-bottom: 12px;
+            display: block;
         }
 
-        .pic-box {
+        .pj-box {
             background: #f1f5f9;
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 15px;
+            padding: 12px;
+            border-radius: 10px;
             border-left: 4px solid var(--gold);
         }
 
         .pj-name {
             color: var(--accent-red);
+            font-size: 0.9rem;
             font-weight: 700;
+            line-height: 1.4;
         }
 
-        /* --- Footer --- */
+        /* --- Table Styling --- */
+        .table-container {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f8fafc;
+            color: var(--primary-blue);
+            text-align: left;
+            padding: 18px 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        tr:hover td {
+            background-color: #fffdf5;
+        }
+
+        .no-col {
+            width: 50px;
+            font-weight: 800;
+            color: var(--accent-red);
+            text-align: center;
+        }
+
+        .target-badge {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: var(--gold);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            white-space: nowrap;
+        }
+
+        .pj-col {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        .staf-tag {
+            color: var(--text-dark);
+            font-weight: 400;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Row Accent Colors */
+        .row-b1 {
+            border-left: 5px solid #fecaca;
+        }
+
+        .row-b2 {
+            border-left: 5px solid #bae6fd;
+        }
+
+        .row-sekre {
+            border-left: 5px solid #fef08a;
+        }
+
         footer {
             text-align: center;
-            padding: 40px;
+            padding: 40px 20px;
             color: #64748b;
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .card {
-            animation: fadeIn 0.6s ease forwards;
-        }
-
-        /* Custom Badge for Field */
-        .badge-field {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.2rem;
-            opacity: 0.3;
-            color: white;
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -193,102 +243,212 @@
 
     <header>
         <h1><i class="fas fa-chart-line"></i> Monitoring & Evaluasi IKO</h1>
-        <p>Badan Kesatuan Bangsa dan Politik (Bakesbangpol) &bull; Tahun 2026</p>
+        <p>Bakesbangpol &bull; Tahun 2026</p>
     </header>
 
     <div class="container">
+        <div class="section-header">
+            <h2>Ringkasan Bidang</h2>
+            <div class="line"></div>
+        </div>
+
         <div class="grid-container">
-
-            <div class="card" style="animation-delay: 0.1s;">
+            <div class="card">
                 <div class="card-header">
-                    <span class="indicator-tag">Indikator 1</span>
-                    <h3>Bidang 1</h3>
-                    <i class="fas fa-shield-alt badge-field"></i>
+                    <h3>Bidang 1 (Savira)</h3>
                 </div>
                 <div class="card-body">
-                    <div class="info-group">
-                        <span class="label">Staf / Operator</span>
-                        <span class="value">Savira</span>
-                    </div>
-                    <div class="pic-box">
+                    <span class="label">Indikator</span>
+                    <span class="value">1</span>
+                    <div class="pj-box">
                         <span class="label">Penanggung Jawab</span>
-                        <span class="value pj-name">Muhammad, SH</span>
+                        <div class="pj-name">Muhammad, SH</div>
                     </div>
                 </div>
             </div>
-
-            <div class="card" style="animation-delay: 0.2s;">
-                <div class="card-header" style="background: linear-gradient(135deg, #1e3a8a, #3b82f6);">
-                    <span class="indicator-tag">Indikator 2, 3, 6</span>
-                    <h3>Bidang 2</h3>
-                    <i class="fas fa-users badge-field"></i>
+            <div class="card">
+                <div class="card-header" style="background: #1e3a8a;">
+                    <h3>Bidang 2 (Gilang)</h3>
                 </div>
                 <div class="card-body">
-                    <div class="info-group">
-                        <span class="label">Staf / Operator</span>
-                        <span class="value">Gilang</span>
-                    </div>
-                    <div class="pic-box">
+                    <span class="label">Indikator</span>
+                    <span class="value">2, 3, 6</span>
+                    <div class="pj-box">
                         <span class="label">Penanggung Jawab</span>
-                        <span class="value pj-name">Achmad Waqot, SH</span>
-                        <div style="margin-top: 5px; border-top: 1px solid #ddd; padding-top: 5px;">
-                            <span class="value pj-name">Siswo Santoso, S. Kom., MT</span>
-                        </div>
+                        <div class="pj-name">Achmad Waqot, SH</div>
+                        <div class="pj-name">Siswo Santoso, S. Kom., MT</div>
                     </div>
                 </div>
             </div>
-
-            <div class="card" style="animation-delay: 0.3s;">
+            <div class="card">
                 <div class="card-header">
-                    <span class="indicator-tag">Indikator 4, 5, 7</span>
-                    <h3>Bidang 1</h3>
-                    <i class="fas fa-balance-scale badge-field"></i>
+                    <h3>Bidang 1 (Makruf)</h3>
                 </div>
                 <div class="card-body">
-                    <div class="info-group">
-                        <span class="label">Staf / Operator</span>
-                        <span class="value">Makruf</span>
-                    </div>
-                    <div class="pic-box">
+                    <span class="label">Indikator</span>
+                    <span class="value">4, 5, 7</span>
+                    <div class="pj-box">
                         <span class="label">Penanggung Jawab</span>
-                        <span class="value pj-name">Drs. Agus Setyoko, M. Si</span>
+                        <div class="pj-name">Drs. Agus Setyoko, M. Si</div>
                     </div>
                 </div>
             </div>
-
-            <div class="card" style="animation-delay: 0.4s;">
-                <div class="card-header" style="background: linear-gradient(135deg, #b91c1c, #991b1b);">
-                    <span class="indicator-tag">Indikator 8 - 19</span>
-                    <h3>Sekretariat</h3>
-                    <i class="fas fa-building badge-field"></i>
+            <div class="card">
+                <div class="card-header" style="background: #991b1b;">
+                    <h3>Sekretariat (Amin)</h3>
                 </div>
                 <div class="card-body">
-                    <div class="info-group">
-                        <span class="label">Staf / Operator</span>
-                        <span class="value">Amin</span>
-                    </div>
-                    <div class="pic-box">
+                    <span class="label">Indikator</span>
+                    <span class="value">8 - 17</span>
+                    <div class="pj-box">
                         <span class="label">Penanggung Jawab</span>
-                        <span class="value pj-name">Oka Barly Abrizaldi Bigwanto, S. STP</span>
+                        <div class="pj-name">Oka Barly Abrizaldi Bigwanto, S. STP</div>
                     </div>
                 </div>
             </div>
+        </div>
 
+        <div class="section-header">
+            <h2>Detail Matriks Operasional</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="no-col">No</th>
+                        <th>Indikator Kinerja Utama</th>
+                        <th>Target</th>
+                        <th>Penanggung Jawab (PJ) & Staf</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row-b1">
+                        <td class="no-col">1</td>
+                        <td>Sekolah yang diberikan pemahaman tentang pendidikan politik dan pengembangan etika serta
+                            budaya politik</td>
+                        <td><span class="target-badge">2 Kegiatan</span></td>
+                        <td class="pj-col">Muhammad, SH <br><span class="staf-tag">Staf: Savira</span></td>
+                    </tr>
+                    <tr class="row-b2">
+                        <td class="no-col">2</td>
+                        <td>Jumlah lokasi kegiatan verifikasi/kelengkapan dokumen administrasi orang asing/tenaga kerja
+                            asing/lembaga asing yang dipantau</td>
+                        <td><span class="target-badge">44 Lokasi</span></td>
+                        <td class="pj-col">Achmad Waqot, SH / Siswo Santoso <br><span class="staf-tag">Staf:
+                                Gilang</span></td>
+                    </tr>
+                    <tr class="row-b2">
+                        <td class="no-col">3</td>
+                        <td>Tingkat penanganan/mediasi potensi konflik IPOLEKSOSBUD yang ada di kota Surabaya</td>
+                        <td><span class="target-badge">&lt; 2 Hari Kerja</span></td>
+                        <td class="pj-col">Achmad Waqot, SH / Siswo Santoso <br><span class="staf-tag">Staf:
+                                Gilang</span></td>
+                    </tr>
+                    <tr class="row-b1">
+                        <td class="no-col">4</td>
+                        <td>Pemahaman peserta mengenai wawasan kebangsaan</td>
+                        <td><span class="target-badge">85%</span></td>
+                        <td class="pj-col">Drs. Agus Setyoko, M. Si <br><span class="staf-tag">Staf: Makruf</span></td>
+                    </tr>
+                    <tr class="row-b1">
+                        <td class="no-col">5</td>
+                        <td>Tingkat penanganan mediasi permasalahan kerukunan umat beragama</td>
+                        <td><span class="target-badge">&lt; 3 Hari Kerja</span></td>
+                        <td class="pj-col">Drs. Agus Setyoko, M. Si <br><span class="staf-tag">Staf: Makruf</span></td>
+                    </tr>
+                    <tr class="row-b2">
+                        <td class="no-col">6</td>
+                        <td>Pemantauan secara kontinyu terhadap kondisi sosial politik masyarakat</td>
+                        <td><span class="target-badge">1 Laporan/Bulan</span></td>
+                        <td class="pj-col">Achmad Waqot, SH / Siswo Santoso <br><span class="staf-tag">Staf:
+                                Gilang</span></td>
+                    </tr>
+                    <tr class="row-b1">
+                        <td class="no-col">7</td>
+                        <td>Pengembangan aplikasi SIRUMI (SISTEM INFORMASI RUMAH IBADAH)</td>
+                        <td><span class="target-badge">1 Aplikasi</span></td>
+                        <td class="pj-col">Drs. Agus Setyoko, M. Si <br><span class="staf-tag">Staf: Makruf</span></td>
+                    </tr>
+                    <tr class="row-sekre">
+                        <td class="no-col">8</td>
+                        <td>Jumlah RW kampung Pancasila yang terbentuk minimal kategori "PEMULA"</td>
+                        <td><span class="target-badge">18 RW</span></td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
+                        </td>
+                    </tr>
+                    <tr class="row-sekre">
+                        <td class="no-col">9</td>
+                        <td>Reformasi Birokrasi Perangkat Daerah</td>
+                        <td><span class="target-badge">AA</span></td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
+                        </td>
+                    </tr>
+                    <tr class="row-sekre">
+                        <td class="no-col">10</td>
+                        <td>SAKIP Perangkat Daerah</td>
+                        <td><span class="target-badge">AA</span></td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
+                        </td>
+                    </tr>
+                    <tr class="row-sekre">
+                        <td class="no-col">11</td>
+                        <td>Indeks Kepuasan Masyarakat</td>
+                        <td><span class="target-badge">&gt; 87,26</span></td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
+                        </td>
+                    </tr>
+                    <tr class="row-sekre">
+                        <td class="no-col">12</td>
+                        <td>Pegawai yang mematuhi etika pegawai sesuai ketentuan yang berlaku</td>
+                        <td><span class="target-badge">100%</span></td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
+                        </td>
+                    </tr>
+                    <tr class="row-sekre">
+                        <td class="no-col">13</td>
+                        <td>Pengelolaan dan Digitalisasi Arsip</td>
+                        <td><span class="target-badge">100%</span></td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
+                        </td>
+                    </tr>
+                    <tr class="row-sekre">
+                        <td class="no-col">14</td>
+                        <td>Persentase PNS yang memenuhi target potensi belanja di aplikasi Peken Surabaya</td>
+                        <td><span class="target-badge">100%</span></td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
+                        </td>
+                    </tr>
+                    <tr class="row-sekre">
+                        <td class="no-col">15</td>
+                        <td>Persentase penyelesaian pengaduan yang masuk melalui aplikasi Wargaku</td>
+                        <td><span class="target-badge">80%</span></td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
+                        </td>
+                    </tr>
+                    <tr class="row-sekre">
+                        <td class="no-col">16</td>
+                        <td>Jumlah konten yang dirilis pada media sosial milik perangkat daerah</td>
+                        <td><span class="target-badge">12 Konten</span></td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
+                        </td>
+                    </tr>
+                    <tr class="row-sekre">
+                        <td class="no-col">17</td>
+                        <td>Temuan kesalahan administrasi dan keuangan di Perangkat Daerah</td>
+                        <td><span class="target-badge">0</span></td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Bakesbangpol Digital Monitoring. All Rights Reserved.</p>
+        <p>&copy; 2026 Bakesbangpol Digital Monitoring System. Dashboard Operasional IKO.</p>
     </footer>
-
-    <script>
-        // Efek Hover Interaktif sederhana dengan JS
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                console.log('Viewing details for: ' + card.querySelector('h3').innerText);
-            });
-        });
-    </script>
 </body>
 
 </html>
