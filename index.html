@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <title>Monev IKO Bakesbangpol 2026</title>
+    <title>Monev IKO Bakesbangpol Januari 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,6 +18,8 @@
             --light-bg: #f8fafc;
             --text-dark: #1e293b;
             --border-color: #e2e8f0;
+            --success-green: #10b981;
+            --pending-gray: #94a3b8;
         }
 
         * {
@@ -81,7 +83,6 @@
             background: var(--border-color);
         }
 
-        /* --- Grid Overview --- */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -151,7 +152,6 @@
             line-height: 1.4;
         }
 
-        /* --- Table Styling --- */
         .table-container {
             background: white;
             border-radius: 16px;
@@ -205,6 +205,28 @@
             white-space: nowrap;
         }
 
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .status-done {
+            background: #d1fae5;
+            color: var(--success-green);
+            border: 1px solid var(--success-green);
+        }
+
+        .status-pending {
+            background: #f1f5f9;
+            color: var(--pending-gray);
+            border: 1px solid var(--pending-gray);
+        }
+
         .pj-col {
             color: var(--primary-blue);
             font-weight: 700;
@@ -218,24 +240,21 @@
             opacity: 0.8;
         }
 
-        /* Row Accent Colors */
-        .row-b1 {
-            border-left: 5px solid #fecaca;
-        }
-
-        .row-b2 {
-            border-left: 5px solid #bae6fd;
-        }
-
-        .row-sekre {
-            border-left: 5px solid #fef08a;
-        }
+        .row-b1 { border-left: 5px solid #fecaca; }
+        .row-b2 { border-left: 5px solid #bae6fd; }
+        .row-sekre { border-left: 5px solid #fef08a; }
 
         footer {
             text-align: center;
             padding: 40px 20px;
             color: #64748b;
             font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.5rem; }
+            th, td { padding: 12px; }
+            .target-badge, .status-badge { font-size: 0.7rem; }
         }
     </style>
 </head>
@@ -244,7 +263,7 @@
 
     <header>
         <h1><i class="fas fa-chart-line"></i> Monitoring & Evaluasi IKO</h1>
-        <p>Bakesbangpol &bull; Tahun 2026</p>
+        <p>Bakesbangpol &bull; Januari 2026</p>
     </header>
 
     <div class="container">
@@ -322,125 +341,128 @@
                         <th>Indikator Kinerja Utama</th>
                         <th>Target</th>
                         <th>Penanggung Jawab (PJ) & Staf</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="row-b1">
                         <td class="no-col">1</td>
-                        <td>Sekolah yang diberikan pemahaman tentang pendidikan politik dan pengembangan etika serta
-                            budaya politik</td>
+                        <td>Sekolah yang diberikan pemahaman tentang pendidikan politik dan pengembangan etika serta budaya politik</td>
                         <td><span class="target-badge">2 Kegiatan</span></td>
                         <td class="pj-col">Muhammad, SH <br><span class="staf-tag">Staf: Savira</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-b2">
                         <td class="no-col">2</td>
-                        <td>Jumlah lokasi kegiatan verifikasi/kelengkapan dokumen administrasi orang asing/tenaga kerja
-                            asing/lembaga asing yang dipantau</td>
+                        <td>Jumlah lokasi kegiatan verifikasi/kelengkapan dokumen administrasi orang asing/tenaga kerja asing/lembaga asing yang dipantau</td>
                         <td><span class="target-badge">44 Lokasi</span></td>
-                        <td class="pj-col">Achmad Waqot, SH / Siswo Santoso <br><span class="staf-tag">Staf:
-                                Gilang</span></td>
+                        <td class="pj-col">Achmad Waqot, SH / Siswo Santoso <br><span class="staf-tag">Staf: Gilang</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-b2">
                         <td class="no-col">3</td>
                         <td>Tingkat penanganan/mediasi potensi konflik IPOLEKSOSBUD yang ada di kota Surabaya</td>
                         <td><span class="target-badge">&lt; 2 Hari Kerja</span></td>
-                        <td class="pj-col">Achmad Waqot, SH / Siswo Santoso <br><span class="staf-tag">Staf:
-                                Gilang</span></td>
+                        <td class="pj-col">Achmad Waqot, SH / Siswo Santoso <br><span class="staf-tag">Staf: Gilang</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-b1">
                         <td class="no-col">4</td>
                         <td>Pemahaman peserta mengenai wawasan kebangsaan</td>
                         <td><span class="target-badge">85%</span></td>
                         <td class="pj-col">Drs. Agus Setyoko, M. Si <br><span class="staf-tag">Staf: Makruf</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-b1">
                         <td class="no-col">5</td>
                         <td>Tingkat penanganan mediasi permasalahan kerukunan umat beragama</td>
                         <td><span class="target-badge">&lt; 3 Hari Kerja</span></td>
                         <td class="pj-col">Drs. Agus Setyoko, M. Si <br><span class="staf-tag">Staf: Makruf</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-b2">
                         <td class="no-col">6</td>
                         <td>Pemantauan secara kontinyu terhadap kondisi sosial politik masyarakat</td>
                         <td><span class="target-badge">1 Laporan/Bulan</span></td>
-                        <td class="pj-col">Achmad Waqot, SH / Siswo Santoso <br><span class="staf-tag">Staf:
-                                Gilang</span></td>
+                        <td class="pj-col">Achmad Waqot, SH / Siswo Santoso <br><span class="staf-tag">Staf: Gilang</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-b1">
                         <td class="no-col">7</td>
                         <td>Pengembangan aplikasi SIRUMI (SISTEM INFORMASI RUMAH IBADAH)</td>
                         <td><span class="target-badge">1 Aplikasi</span></td>
                         <td class="pj-col">Drs. Agus Setyoko, M. Si <br><span class="staf-tag">Staf: Makruf</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-sekre">
                         <td class="no-col">8</td>
                         <td>Jumlah RW kampung Pancasila yang terbentuk minimal kategori "PEMULA"</td>
                         <td><span class="target-badge">18 RW</span></td>
-                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
-                        </td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-sekre">
                         <td class="no-col">9</td>
                         <td>Reformasi Birokrasi Perangkat Daerah</td>
                         <td><span class="target-badge">AA</span></td>
-                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
-                        </td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-sekre">
                         <td class="no-col">10</td>
                         <td>SAKIP Perangkat Daerah</td>
                         <td><span class="target-badge">AA</span></td>
-                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
-                        </td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-sekre">
                         <td class="no-col">11</td>
                         <td>Indeks Kepuasan Masyarakat</td>
                         <td><span class="target-badge">&gt; 87,26</span></td>
-                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
-                        </td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span></td>
+                        <td><span class="status-badge status-done">Sudah Selesai</span></td>
                     </tr>
                     <tr class="row-sekre">
                         <td class="no-col">12</td>
                         <td>Pegawai yang mematuhi etika pegawai sesuai ketentuan yang berlaku</td>
                         <td><span class="target-badge">100%</span></td>
-                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
-                        </td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-sekre">
                         <td class="no-col">13</td>
                         <td>Pengelolaan dan Digitalisasi Arsip</td>
                         <td><span class="target-badge">100%</span></td>
-                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
-                        </td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-sekre">
                         <td class="no-col">14</td>
                         <td>Persentase PNS yang memenuhi target potensi belanja di aplikasi Peken Surabaya</td>
                         <td><span class="target-badge">100%</span></td>
-                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
-                        </td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span></td>
+                        <td><span class="status-badge status-done">Sudah Selesai</span></td>
                     </tr>
                     <tr class="row-sekre">
                         <td class="no-col">15</td>
                         <td>Persentase penyelesaian pengaduan yang masuk melalui aplikasi Wargaku</td>
                         <td><span class="target-badge">80%</span></td>
-                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
-                        </td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-sekre">
                         <td class="no-col">16</td>
                         <td>Jumlah konten yang dirilis pada media sosial milik perangkat daerah</td>
                         <td><span class="target-badge">12 Konten</span></td>
-                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
-                        </td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                     <tr class="row-sekre">
                         <td class="no-col">17</td>
                         <td>Temuan kesalahan administrasi dan keuangan di Perangkat Daerah</td>
                         <td><span class="target-badge">0</span></td>
-                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span>
-                        </td>
+                        <td class="pj-col">Oka Barly Abrizaldi B., S. STP <br><span class="staf-tag">Staf: Amin</span></td>
+                        <td><span class="status-badge status-pending">Belum Selesai</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -448,7 +470,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Bakesbangpol Digital Monitoring System. Dashboard Operasional IKO.</p>
+        <p>&copy; 2026 Bakesbangpol Digital Monitoring System. Dashboard Operasional Januari 2026.</p>
     </footer>
 </body>
 
